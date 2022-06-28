@@ -71,6 +71,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A75D8180286B141F008AB3EC /* Build configuration list for PBXNativeTarget "TossClone" */;
 			buildPhases = (
+				A75D8183286B1B18008AB3EC /* SwiftLint Script */,
 				A75D8168286B1416008AB3EC /* Sources */,
 				A75D8169286B1416008AB3EC /* Frameworks */,
 				A75D816A286B1416008AB3EC /* Resources */,
@@ -128,6 +129,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A75D8183286B1B18008AB3EC /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A75D8168286B1416008AB3EC /* Sources */ = {
