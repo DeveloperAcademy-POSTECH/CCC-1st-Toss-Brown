@@ -8,44 +8,44 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-    private lazy var homeViewController: UIViewController = {
+    private lazy var homeViewController: UINavigationController = {
         let viewController = HomeViewController()
         let tabBarItem = UITabBarItem(title: "홈", image: UIImage(systemName: "house.fill"), tag: 0)
         viewController.tabBarItem = tabBarItem
-        
-        return viewController
+        let navigationView = UINavigationController(rootViewController: viewController)
+        return navigationView
     }()
     
     private lazy var bonusViewController: UIViewController = {
         let viewController = UIViewController()
-        let tabBarItem = UITabBarItem(title: "혜택", image: UIImage(systemName: "diamond.fill"), tag: 0)
+        let tabBarItem = UITabBarItem(title: "혜택", image: UIImage(systemName: "diamond.fill"), tag: 1)
         viewController.tabBarItem = tabBarItem
-        
-        return viewController
+        let navigationView = UINavigationController(rootViewController: viewController)
+        return navigationView
     }()
     
     private lazy var sendMondeyViewController: UIViewController = {
         let viewController = UIViewController()
-        let tabBarItem = UITabBarItem(title: "송금", image: UIImage(systemName: "dollarsign.circle.fill"), tag: 0)
+        let tabBarItem = UITabBarItem(title: "송금", image: UIImage(systemName: "dollarsign.circle.fill"), tag: 2)
         viewController.tabBarItem = tabBarItem
-        
-        return viewController
+        let navigationView = UINavigationController(rootViewController: viewController)
+        return navigationView
     }()
     
     private lazy var stockViewController: UIViewController = {
         let viewController = UIViewController()
-        let tabBarItem = UITabBarItem(title: "주식", image: UIImage(systemName: "chart.bar.fill"), tag: 0)
+        let tabBarItem = UITabBarItem(title: "주식", image: UIImage(systemName: "chart.bar.fill"), tag: 3)
         viewController.tabBarItem = tabBarItem
-        
-        return viewController
+        let navigationView = UINavigationController(rootViewController: viewController)
+        return navigationView
     }()
     
     private lazy var allViewController: UIViewController = {
         let viewController = UIViewController()
-        let tabBarItem = UITabBarItem(title: "전체", image: UIImage(systemName: "line.3.horizontal"), tag: 0)
+        let tabBarItem = UITabBarItem(title: "전체", image: UIImage(systemName: "line.3.horizontal"), tag: 4)
         viewController.tabBarItem = tabBarItem
-        
-        return viewController
+        let navigationView = UINavigationController(rootViewController: viewController)
+        return navigationView
     }()
     
     override func viewDidLoad() {
