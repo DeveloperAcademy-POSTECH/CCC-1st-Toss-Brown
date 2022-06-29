@@ -53,6 +53,14 @@ class TabBarController: UITabBarController {
         viewControllers = [homeViewController, bonusViewController, sendMondeyViewController, stockViewController, allViewController]
         self.configureTabBar()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        var tabFrame = self.tabBar.frame
+        tabFrame.size.height = 88
+        tabFrame.origin.y = self.view.frame.size.height - 88
+        self.tabBar.frame = tabFrame
+    }
 }
 
 extension TabBarController {
