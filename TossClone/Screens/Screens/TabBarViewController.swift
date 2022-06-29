@@ -9,7 +9,7 @@ import UIKit
 
 class TabBarController: UITabBarController {
     private lazy var homeViewController: UIViewController = {
-        let viewController = UIViewController()
+        let viewController = HomeViewController()
         let tabBarItem = UITabBarItem(title: "홈", image: UIImage(systemName: "house.fill"), tag: 0)
         viewController.tabBarItem = tabBarItem
         
@@ -67,6 +67,8 @@ extension TabBarController {
     func configureTabBar() {
         self.tabBar.tintColor = .label
         self.tabBar.layer.cornerRadius = 20
+        self.tabBar.layer.masksToBounds = true
+        self.tabBar.layer.backgroundColor = UIColor.systemBackground.cgColor
         self.tabBar.layer.borderColor = UIColor.lightGray.cgColor
         self.tabBar.layer.borderWidth = 0.4
     }
