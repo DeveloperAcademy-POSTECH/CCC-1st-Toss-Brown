@@ -14,6 +14,7 @@
 		A75D817C286B141F008AB3EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75D817A286B141F008AB3EC /* LaunchScreen.storyboard */; };
 		A75D8186286B1BB0008AB3EC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A75D8185286B1BB0008AB3EC /* SnapKit */; };
 		A75D8188286B21E8008AB3EC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A75D8187286B21E8008AB3EC /* .swiftlint.yml */; };
+		A7B63E7B286C5B6300A786D8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B63E7A286C5B6300A786D8 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A75D817B286B141F008AB3EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A75D817D286B141F008AB3EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A75D8187286B21E8008AB3EC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		A7B63E7A286C5B6300A786D8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				A75D8173286B1416008AB3EC /* TabBarViewController.swift */,
+				A7B63E7C286C5B7000A786D8 /* Home */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -115,6 +118,14 @@
 				A75D8171286B1416008AB3EC /* SceneDelegate.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		A7B63E7C286C5B7000A786D8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A7B63E7A286C5B6300A786D8 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +230,7 @@
 				A75D8174286B1416008AB3EC /* TabBarViewController.swift in Sources */,
 				A75D8170286B1416008AB3EC /* AppDelegate.swift in Sources */,
 				A75D8172286B1416008AB3EC /* SceneDelegate.swift in Sources */,
+				A7B63E7B286C5B6300A786D8 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
