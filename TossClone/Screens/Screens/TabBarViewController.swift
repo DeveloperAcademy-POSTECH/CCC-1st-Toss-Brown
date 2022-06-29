@@ -48,9 +48,18 @@ class TabBarController: UITabBarController {
         return viewController
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewControllers = [homeViewController, bonusViewController, sendMondeyViewController, stockViewController, allViewController]
+        self.configureTabBar()
+    }
+}
+
+extension TabBarController {
+    func configureTabBar() {
+        self.tabBar.tintColor = .label
+        self.tabBar.layer.cornerRadius = 20
+        self.tabBar.layer.borderColor = UIColor.lightGray.cgColor
+        self.tabBar.layer.borderWidth = 0.4
     }
 }
