@@ -64,18 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				A75D817D286B141F008AB3EC /* Info.plist */,
-				A75D8189286B3644008AB3EC /* Screens */,
+				A75D818A286B36EF008AB3EC /* Global */,
+				A75D818C286B3700008AB3EC /* Screens */,
 			);
 			path = TossClone;
-			sourceTree = "<group>";
-		};
-		A75D8189286B3644008AB3EC /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				A75D818C286B3700008AB3EC /* Screens */,
-				A75D818A286B36EF008AB3EC /* Global */,
-			);
-			path = Screens;
 			sourceTree = "<group>";
 		};
 		A75D818A286B36EF008AB3EC /* Global */ = {
@@ -102,7 +94,8 @@
 				A75D8173286B1416008AB3EC /* TabBarViewController.swift */,
 				A7B63E7C286C5B7000A786D8 /* Home */,
 			);
-			path = Screens;
+			name = Screens;
+			path = Screens/Screens;
 			sourceTree = "<group>";
 		};
 		A75D818D286B371C008AB3EC /* Storyboard */ = {
