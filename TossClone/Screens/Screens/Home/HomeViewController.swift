@@ -57,6 +57,7 @@ final class HomeViewController: UIViewController {
         collectionview.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        setupNavigationBar()
     }
 }
 
