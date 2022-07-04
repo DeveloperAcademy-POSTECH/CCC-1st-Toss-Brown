@@ -10,25 +10,22 @@ import UIKit
 import SnapKit
 
 final class HomeCollectionViewCell: UICollectionViewCell {
-    
-    private let stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .center
         stackView.axis = .vertical
-        stackView.spacing = 16
+        stackView.layer.cornerRadius = 25.0
+        stackView.backgroundColor = .white
+        stackView.spacing = 10
         return stackView
     }()
-    private let titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = label.font.withSize(20)
-        label.textColor = .red
+        label.text = "토스뱅크"
+        label.numberOfLines = 1
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 22)
         return label
-    }()
-    private let imageView: UIImageView = {
-        let imageView = UIImageView(frame: .zero)
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        return imageView
     }()
     
     // MARK: - func
@@ -46,20 +43,29 @@ final class HomeCollectionViewCell: UICollectionViewCell {
         return layoutAttributes
     }
     
-    private func setupSubviews() {
+    func setup() {
+        setupSubViews()
+    }
+}
+
+private extension HomeCollectionViewCell {
+    func setupSubViews() {
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
-            $0.top.leading.trailing.equalTo(contentView.safeAreaLayoutGuide)
-            $0.bottom.equalToSuperview()
+            $0.leading.equalToSuperview().inset(24.0)
+            $0.trailing.equalToSuperview()
+            $0.top.equalToSuperview()
         }
-        
         contentView.addSubview(stackView)
-        stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(titleLabel)
         stackView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(titleLabel.snp.top).offset(-8).priority(.required)
+            $0.trailing.equalToSuperview()
+            $0.top.leading.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
-        
+    }
+    
+    func setTitleData(with data: Title) {
+        titleLabel.text = data.title
     }
 }
