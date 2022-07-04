@@ -18,6 +18,18 @@ final class HomeCollectionViewCell: UICollectionViewCell {
         stackView.spacing = 16
         return stackView
     }()
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = label.font.withSize(20)
+        label.textColor = .red
+        return label
+    }()
+    private let imageView: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }()
     
     // MARK: - func
     
@@ -32,5 +44,22 @@ final class HomeCollectionViewCell: UICollectionViewCell {
         layoutAttributes.frame = frame
         
         return layoutAttributes
+    }
+    
+    private func setupSubviews() {
+        contentView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(contentView.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
+        }
+        
+        contentView.addSubview(stackView)
+        stackView.addArrangedSubview(imageView)
+        stackView.addArrangedSubview(titleLabel)
+        stackView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(titleLabel.snp.top).offset(-8).priority(.required)
+        }
+        
     }
 }
