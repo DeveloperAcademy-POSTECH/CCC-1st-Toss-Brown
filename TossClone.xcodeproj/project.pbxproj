@@ -16,7 +16,7 @@
 		A75D8188286B21E8008AB3EC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A75D8187286B21E8008AB3EC /* .swiftlint.yml */; };
 		A7B63E7B286C5B6300A786D8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B63E7A286C5B6300A786D8 /* HomeViewController.swift */; };
 		A7B63E81286DCEF700A786D8 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B63E80286DCEF700A786D8 /* HomeCollectionViewCell.swift */; };
-		A7B63E84286DDA6600A786D8 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B63E83286DDA6600A786D8 /* DataModel.swift */; };
+		A7B63E84286DDA6600A786D8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B63E83286DDA6600A786D8 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		A75D8187286B21E8008AB3EC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A7B63E7A286C5B6300A786D8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A7B63E80286DCEF700A786D8 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		A7B63E83286DDA6600A786D8 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		A7B63E83286DDA6600A786D8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +130,7 @@
 		A7B63E82286DDA5A00A786D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A7B63E83286DDA6600A786D8 /* DataModel.swift */,
+				A7B63E83286DDA6600A786D8 /* ViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,7 +239,7 @@
 				A75D8170286B1416008AB3EC /* AppDelegate.swift in Sources */,
 				A75D8172286B1416008AB3EC /* SceneDelegate.swift in Sources */,
 				A7B63E7B286C5B6300A786D8 /* HomeViewController.swift in Sources */,
-				A7B63E84286DDA6600A786D8 /* DataModel.swift in Sources */,
+				A7B63E84286DDA6600A786D8 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
