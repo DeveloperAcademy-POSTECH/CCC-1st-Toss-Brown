@@ -10,6 +10,9 @@ import UIKit
 import SnapKit
 
 final class HomeViewController: UIViewController {
+    
+    // MARK: - property
+    
     private lazy var collectionview: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -18,7 +21,6 @@ final class HomeViewController: UIViewController {
         collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "homeCell")
         return collectionView
     }()
-
     private lazy var logoView: UIStackView = {
         var logoImage = UIImage(named: "tossLogo")
         let logoButton = UIButton()
@@ -50,6 +52,9 @@ final class HomeViewController: UIViewController {
         bellBarItem.tintColor = .systemGray
         return bellBarItem
     }()
+    
+    // MARK: - cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionview)
