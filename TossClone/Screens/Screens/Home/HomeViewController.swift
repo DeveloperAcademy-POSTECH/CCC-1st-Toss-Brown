@@ -19,6 +19,18 @@ final class HomeViewController: UIViewController {
         return collectionView
     }()
 
+    private lazy var logoView: UIStackView = {
+        var logoImage = UIImage(named: "tossLogo")
+        let logoButton = UIButton()
+        logoButton.setImage(logoImage, for: .normal)
+        logoButton.imageView?.contentMode = .scaleAspectFit
+        logoButton.addTarget(self, action: #selector(logoButtonPressed), for: .touchDown)
+        let spacer = UIView()
+        let logoStack = UIStackView(arrangedSubviews: [logoButton, spacer])
+        logoStack.axis = .horizontal
+        logoStack.distribution = .fillEqually
+        return logoStack
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionview)
