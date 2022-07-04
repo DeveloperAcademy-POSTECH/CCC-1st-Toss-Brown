@@ -43,6 +43,13 @@ final class HomeViewController: UIViewController {
         chatBarItem.tintColor = .systemGray
         return chatBarItem
     }()
+    private lazy var bellBarItem: UIBarButtonItem = {
+        let bellImage = UIImage(systemName: "bell.fill")
+        let bellBarItem = UIBarButtonItem(image: bellImage, style: .plain,
+                                          target: self, action: #selector(bellButtonPressed))
+        bellBarItem.tintColor = .systemGray
+        return bellBarItem
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionview)
