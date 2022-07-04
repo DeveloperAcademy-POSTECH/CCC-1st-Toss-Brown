@@ -31,6 +31,12 @@ final class HomeViewController: UIViewController {
         logoStack.distribution = .fillEqually
         return logoStack
     }()
+    private lazy var addBarItem: UIBarButtonItem = {
+        let addImage = UIImage(systemName: "plus")
+        let addBarItem = UIBarButtonItem(image: addImage, style: .plain, target: self, action: #selector(addButtonPressed))
+        addBarItem.tintColor = .systemGray
+        return addBarItem
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionview)
