@@ -82,3 +82,22 @@ extension HomeViewController: UICollectionViewDataSource {
         return cell ?? UICollectionViewCell()
     }
 }
+
+extension HomeViewController {
+    private func setupNavigationBar() {
+        navigationItem.titleView = logoView
+        navigationItem.rightBarButtonItems = [bellBarItem, chatBarItem, addBarItem]
+    }
+    @objc func logoButtonPressed() {
+        // action
+    }
+    @objc func addButtonPressed() {
+        // action
+    }
+    @objc func chatButtonPressed() {
+        // action
+    }
+    @objc func bellButtonPressed() {
+        // action
+    }
+}
