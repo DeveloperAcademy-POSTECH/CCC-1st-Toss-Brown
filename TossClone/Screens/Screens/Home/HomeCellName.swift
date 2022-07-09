@@ -33,6 +33,7 @@ class HomeCellName: UIView {
     init(frame: CGRect, type: HomeCellType) {
         self.cellType = type
         super.init(frame: frame)
+        setupViews()
     }
     
     required init?(coder: NSCoder) {
@@ -46,3 +47,18 @@ class HomeCellName: UIView {
     }
 }
 
+extension HomeCellName {
+    func setupViews() {
+        [cellNamebutton, cellNameLabel, arrowImage].forEach { addSubview($0) }
+        cellNamebutton.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        cellNameLabel.snp.makeConstraints {
+            $0.top.left.right.bottom.equalToSuperview().inset(24.0)
+        }
+        arrowImage.snp.makeConstraints {
+            $0.centerY.equalTo(cellNameLabel.snp.centerY)
+            $0.trailing.equalToSuperview().inset(24.0)
+        }
+    }
+}
