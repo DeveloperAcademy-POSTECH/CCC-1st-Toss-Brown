@@ -27,3 +27,22 @@ class HomeCellName: UIView {
         $0.image = cellType.arrowImage
         return $0
     }(UIImageView())
+    
+    // MARK: - init
+    
+    init(frame: CGRect, type: HomeCellType) {
+        self.cellType = type
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - func
+    
+    @objc func tapCellType() {
+        print("cell name을 터치했습니다.")
+    }
+}
+
