@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeCellList: UIView {
-    var cellList: HomeCellListData
+    var cellList: [HomeCellListData]
     
     // MARK: - properties
     
@@ -32,5 +32,23 @@ class HomeCellList: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension HomeCellList: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(indexPath.row) touched")
+    }
+    
+}
+
+extension HomeCellList: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        cellList.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCellListCell", for: indexPath) as? HomeCellListCell
+        cell?.setup(row: cellList[indexPath.row])
+        return cell ?? UITableViewCell()
     }
 }
