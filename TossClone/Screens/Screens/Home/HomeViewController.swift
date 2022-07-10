@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 final class HomeViewController: UIViewController {
+    var data: [TossData] = []
     
     // MARK: - property
     
@@ -43,6 +44,18 @@ final class HomeViewController: UIViewController {
                                           target: self, action: #selector(bellButtonPressed))
         bellBarItem.tintColor = .systemGray
         return bellBarItem
+    }()
+    private lazy var homeListView: UIStackView = {
+        let stackView = UIStackView()
+        let tossBankListView = HomeCell(frame: .zero, data: data[0])
+        let assetsListView = HomeCell(frame: .zero, data: data[1])
+        let consumptionListView = HomeCell(frame: .zero, data: data[2])
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 12.0
+        [tossBankListView, assetsListView, consumptionListView].forEach { stackView.addArrangedSubview($0) }
+        return stackView
     }()
     
     // MARK: - cycle
