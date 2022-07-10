@@ -13,7 +13,7 @@ final class HomeViewController: UIViewController {
     var data: [TossData] = []
     
     // MARK: - property
-    
+    private lazy var scrollView = UIScrollView()
     private lazy var logoView: UIStackView = {
         var logoImage = UIImage(named: "tossLogo")
         let logoButton = UIButton()
