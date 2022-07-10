@@ -71,6 +71,21 @@ extension HomeViewController {
         navigationItem.titleView = logoView
         navigationItem.rightBarButtonItems = [bellBarItem, chatBarItem, addBarItem]
     }
+    
+    private func setupLayout() {
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        scrollView.addSubview(homeListView)
+        homeListView.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16.0)
+            $0.trailing.equalToSuperview().inset(16.0)
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+    }
+    
     @objc func logoButtonPressed() {
         // action
     }
