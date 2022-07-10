@@ -12,6 +12,7 @@ import SnapKit
 class HomeCellListCell: UITableViewCell {
     var cellList: HomeCellListData?
     var type: TossData?
+    static let height: CGFloat = 70.0
     
     // MARK: - properties
     private lazy var listImageView: UIImageView = {

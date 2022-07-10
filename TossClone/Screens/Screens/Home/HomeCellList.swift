@@ -28,6 +28,7 @@ class HomeCellList: UIView {
     init(frame: CGRect, list: [HomeCellListData]) {
         cellList = list
         super.init(frame: frame)
+        setupViews()
     }
     
     required init?(coder: NSCoder) {
@@ -50,5 +51,15 @@ extension HomeCellList: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCellListCell", for: indexPath) as? HomeCellListCell
         cell?.setup(row: cellList[indexPath.row])
         return cell ?? UITableViewCell()
+    }
+}
+
+extension HomeCellList {
+    private func setupViews() {
+        addSubview(cellTableView)
+        cellTableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.height.equalTo(HomeCellListCell.height * CGFloat(cellList.count))
+        }
     }
 }
