@@ -30,6 +30,7 @@ class HomeCell: UIView {
     init(frame: CGRect, data: TossData) {
         self.cellData = data
         super.init(frame: frame)
+        setupViews()
     }
     
     required init?(coder: NSCoder) {
@@ -37,4 +38,11 @@ class HomeCell: UIView {
     }
 }
 
+extension HomeCell {
+    func setupViews() {
+        addSubview(cellStackView)
+        cellStackView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+    }
 }
