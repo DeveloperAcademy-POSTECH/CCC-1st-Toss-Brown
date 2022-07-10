@@ -26,4 +26,15 @@ class HomeCell: UIView {
         
         return stackView
     }()
+    
+    init(frame: CGRect, data: TossData) {
+        self.cellData = data
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 }
