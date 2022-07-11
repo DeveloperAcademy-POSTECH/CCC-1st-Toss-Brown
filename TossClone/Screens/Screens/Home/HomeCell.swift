@@ -18,7 +18,7 @@ class HomeCell: UIView {
         stackView.alignment = .fill
         stackView.distribution = .equalSpacing
         stackView.spacing = 5.0
-        
+        stackView.backgroundColor = .purple
         let homeNameView = HomeCellName(frame: .zero, type: cellData.cellType)
         let homeListView = HomeCellList(frame: .zero, list: cellData.cellList)
         

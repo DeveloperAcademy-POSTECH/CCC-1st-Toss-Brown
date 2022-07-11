@@ -18,17 +18,20 @@ class HomeCellListCell: UITableViewCell {
     private lazy var listImageView: UIImageView = {
         $0.image = UIImage(named: cellList?.image ?? "xmark.circle")
         $0.contentMode = .scaleToFill
+        $0.backgroundColor = .black
         return $0
     }(UIImageView())
     private lazy var subTitle: UILabel = {
         $0.text = cellList?.subTitle
         $0.textColor = .darkGray
         $0.font = .systemFont(ofSize: 14.0)
+        $0.backgroundColor = .green
         return $0
     }(UILabel())
     private lazy var title: UILabel = {
         $0.text = cellList?.title
         $0.font = .systemFont(ofSize: 18.0)
+        $0.backgroundColor = .blue
         return $0
     }(UILabel())
     private lazy var sendButton: UIButton = {
