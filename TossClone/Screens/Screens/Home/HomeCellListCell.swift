@@ -52,6 +52,7 @@ class HomeCellListCell: UITableViewCell {
     // MARK: - func
     
     func setup(row: HomeCellListData) {
+        cellList = row
         setupViews()
     }
     
