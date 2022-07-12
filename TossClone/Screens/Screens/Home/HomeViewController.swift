@@ -14,6 +14,7 @@ final class HomeViewController: UIViewController {
     
     // MARK: - property
     private lazy var scrollView = UIScrollView()
+    private lazy var contentView = UIView()
     private lazy var logoView: UIStackView = {
         var logoImage = UIImage(named: "tossLogo")
         let logoButton = UIButton()
@@ -79,8 +80,13 @@ extension HomeViewController {
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        scrollView.addSubview(homeListView)
-        homeListView.snp.makeConstraints {
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
+            $0.height.equalTo(scrollView.contentLayoutGuide.snp.height)
+        }
+        contentView.addSubview(homeListStackView)
             $0.leading.equalToSuperview().inset(16.0)
             $0.trailing.equalToSuperview().inset(16.0)
             $0.top.equalToSuperview()
