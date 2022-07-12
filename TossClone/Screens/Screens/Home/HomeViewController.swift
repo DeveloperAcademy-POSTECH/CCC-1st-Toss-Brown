@@ -46,7 +46,7 @@ final class HomeViewController: UIViewController {
         bellBarItem.tintColor = .systemGray
         return bellBarItem
     }()
-    private lazy var homeListView: UIStackView = {
+    private lazy var homeListStackView: UIStackView = {
         let stackView = UIStackView()
         let tossBankListView = HomeCell(frame: .zero, data: data[0])
         let assetsListView = HomeCell(frame: .zero, data: data[1])
@@ -87,6 +87,7 @@ extension HomeViewController {
             $0.height.equalTo(scrollView.contentLayoutGuide.snp.height)
         }
         contentView.addSubview(homeListStackView)
+        homeListStackView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16.0)
             $0.trailing.equalToSuperview().inset(16.0)
             $0.top.equalToSuperview()
