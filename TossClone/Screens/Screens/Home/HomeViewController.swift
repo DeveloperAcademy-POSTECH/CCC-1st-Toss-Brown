@@ -108,3 +108,15 @@ extension HomeViewController {
         // action
     }
 }
+
+#if DEBUG
+import SwiftUI
+
+struct HomeViewControllerPreview: PreviewProvider {
+    static var previews: some View {
+        HomeViewController()
+            .toPreview()
+//            .ignoresSafeArea()
+    }
+}
+#endif
