@@ -62,10 +62,10 @@ extension HomeCellListCell {
     func setupViews() {
         [listImageView, subTitle, title].forEach { addSubview($0) }
         listImageView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(24.0)
+            $0.leading.equalToSuperview().inset(24.0)
             $0.width.height.equalTo(40.0)
             $0.top.equalToSuperview().inset(20.0)
-            $0.trailing.equalToSuperview().inset(20.0)
+            $0.bottom.equalToSuperview().inset(20.0)
         }
         subTitle.snp.makeConstraints {
             $0.leading.equalTo(listImageView.snp.trailing).offset(24.0)
