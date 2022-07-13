@@ -43,15 +43,22 @@ struct HomeCellListData {
     let image: String
     let subTitle: String
     let title: String
+    let cellType: ConsumeType
+}
+
+enum ConsumeType {
+    case account
+    case history
+    case etc
 }
 
 // MARK: - dummy data
-let tossBankRow = HomeCellListData(image: "tossbankAds", subTitle: "일 복리 효과를 누릴 수 있어요", title: "눌러서 매일 이자 받기")
-let assetsRow1 = HomeCellListData(image: "tossbank", subTitle: "토스뱅크 통장", title: "150,000원")
-let assetsRow2 = HomeCellListData(image: "shinhan", subTitle: "신한은행 계좌", title: "? 원")
-let assetsRow3 = HomeCellListData(image: "hana", subTitle: "하나은행 계좌", title: "? 원")
-let assetsRow4 = HomeCellListData(image: "toss", subTitle: "투자·토스증권 계좌", title: "100,000원")
-let consumptionRow = HomeCellListData(image: "card", subTitle: "이번 달 쓴 금액", title: "30,000원")
+let tossBankRow = HomeCellListData(image: "tossbankAds", subTitle: "일 복리 효과를 누릴 수 있어요", title: "눌러서 매일 이자 받기", cellType: .etc)
+let assetsRow1 = HomeCellListData(image: "tossbank", subTitle: "토스뱅크 통장", title: "150,000원", cellType: .account)
+let assetsRow2 = HomeCellListData(image: "shinhan", subTitle: "신한은행 계좌", title: "? 원", cellType: .account)
+let assetsRow3 = HomeCellListData(image: "hana", subTitle: "하나은행 계좌", title: "? 원", cellType: .account)
+let assetsRow4 = HomeCellListData(image: "toss", subTitle: "투자·토스증권 계좌", title: "100,000원", cellType: .account)
+let consumptionRow = HomeCellListData(image: "card", subTitle: "이번 달 쓴 금액", title: "30,000원", cellType: .history)
 
 let tossCellData = TossData(cellType: .tossBank, cellList: [tossBankRow])
 let assetsCellData = TossData(cellType: .assets, cellList: [assetsRow1, assetsRow2, assetsRow3, assetsRow4])
