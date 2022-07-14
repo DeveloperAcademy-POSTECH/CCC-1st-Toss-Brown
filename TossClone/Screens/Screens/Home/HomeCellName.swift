@@ -16,18 +16,15 @@ class HomeCellName: UIView {
     
     private lazy var cellNamebutton: UIButton = {
         $0.addTarget(nil, action: #selector(tapCellType), for: .touchUpInside)
-        $0.backgroundColor = .red
         return $0
     }(UIButton())
     private lazy var cellNameLabel: UILabel = {
         $0.text = cellType.cellName
         $0.font = .systemFont(ofSize: 22.0, weight: .bold)
-        $0.backgroundColor = .orange
         return $0
     }(UILabel())
     private lazy var arrowImage: UIImageView = {
         $0.image = cellType.arrowImage
-        $0.backgroundColor = .yellow
         return $0
     }(UIImageView())
     
