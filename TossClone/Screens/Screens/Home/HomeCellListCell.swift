@@ -8,6 +8,7 @@
 import UIKit
 
 import SnapKit
+import SwiftUI
 
 class HomeCellListCell: UITableViewCell {
     var cellRow: HomeCellListData?
@@ -23,18 +24,19 @@ class HomeCellListCell: UITableViewCell {
     private lazy var subTitle: UILabel = {
         $0.text = cellRow?.subTitle
         $0.textColor = .darkGray
-        $0.font = .systemFont(ofSize: 14.0)
+        $0.font = .systemFont(ofSize: 14.0, weight: .semibold)
         return $0
     }(UILabel())
     private lazy var title: UILabel = {
         $0.text = cellRow?.title
-        $0.font = .systemFont(ofSize: 18.0)
+        $0.font = .systemFont(ofSize: 18.0, weight: .semibold)
         return $0
     }(UILabel())
     private lazy var sendButton: UIButton = {
         $0.setTitle("송금", for: .normal)
         $0.setTitleColor(.darkGray, for: .normal)
         $0.layer.cornerRadius = 5.0
+        $0.titleLabel?.font = .systemFont(ofSize: 14.0)
         $0.backgroundColor = .lightGray
         return $0
     }(UIButton())
@@ -42,6 +44,7 @@ class HomeCellListCell: UITableViewCell {
         $0.setTitle("내역", for: .normal)
         $0.setTitleColor(.darkGray, for: .normal)
         $0.layer.cornerRadius = 5.0
+        $0.titleLabel?.font = .systemFont(ofSize: 14.0)
         $0.backgroundColor = .lightGray
         return $0
     }(UIButton())
