@@ -79,10 +79,10 @@ extension HomeCellListCell {
             $0.trailing.equalToSuperview()
         }
         
-        switch type?.cellType {
-        case .assets:
+        switch cellRow?.cellType {
+        case .account:
             setupSendButton()
-        case .consumption:
+        case .history:
             setupHistoryButton()
         default:
             return
