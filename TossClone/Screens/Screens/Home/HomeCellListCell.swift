@@ -93,19 +93,19 @@ extension HomeCellListCell {
         addSubview(sendButton)
         sendButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(24.0)
-            $0.centerY.equalTo(snp.centerY)
             $0.width.equalTo(50.0)
             $0.height.equalTo(30.0)
+            $0.centerY.equalTo(snp.centerY)
         }
     }
     
     func setupHistoryButton() {
         addSubview(historyButton)
-            $0.trailing.equalToSuperview().inset(24.0)
-            $0.centerY.equalTo(snp.centerY)
-            $0.width.equalTo(50.0)
         historyButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(24.0)
+            $0.width.equalTo(50.0)
             $0.height.equalTo(30.0)
+            $0.centerY.equalTo(snp.centerY)
         }
     }
 }
