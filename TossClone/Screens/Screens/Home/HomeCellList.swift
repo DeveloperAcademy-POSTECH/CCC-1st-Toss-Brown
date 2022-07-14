@@ -16,7 +16,7 @@ class HomeCellList: UIView {
         let tableView = UITableView(frame: .zero)
         tableView.rowHeight = 70
         tableView.separatorStyle = .none
-        tableView.separatorInset = UIEdgeInsets(top: 7.0, left: 24.0, bottom: 7.0, right: 24.0)
+        tableView.separatorInset = UIEdgeInsets(top: 5.0, left: 24.0, bottom: 5.0, right: 24.0)
         tableView.layer.cornerRadius = 20
         tableView.delegate = self
         tableView.dataSource = self
