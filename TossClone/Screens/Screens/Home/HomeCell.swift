@@ -30,6 +30,8 @@ class HomeCell: UIView {
         self.cellData = data
         super.init(frame: frame)
         setupViews()
+        self.layer.cornerRadius = 20
+        self.backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
