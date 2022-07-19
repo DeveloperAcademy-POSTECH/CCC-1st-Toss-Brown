@@ -10,17 +10,11 @@ import UIKit
 import SnapKit
 
 final class HomeViewController: UIViewController {
+    var data: [TossData] = []
     
     // MARK: - property
-    
-    private lazy var collectionview: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "homeCell")
-        return collectionView
-    }()
+    private lazy var scrollView = UIScrollView()
+    private lazy var contentView = UIView()
     private lazy var logoView: UIStackView = {
         var logoImage = UIImage(named: "tossLogo")
         let logoButton = UIButton()
@@ -52,40 +46,26 @@ final class HomeViewController: UIViewController {
         bellBarItem.tintColor = .systemGray
         return bellBarItem
     }()
+    private lazy var homeListStackView: UIStackView = {
+        let stackView = UIStackView()
+        let tossBankListView = HomeCell(frame: .zero, data: data[0])
+        let assetsListView = HomeCell(frame: .zero, data: data[1])
+        let consumptionListView = HomeCell(frame: .zero, data: data[2])
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 12.0
+        [tossBankListView, assetsListView, consumptionListView].forEach { stackView.addArrangedSubview($0) }
+        return stackView
+    }()
     
     // MARK: - cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(collectionview)
-        collectionview.backgroundColor = .backgroundColor
-        collectionview.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
+        data = dummyData
         setupNavigationBar()
-    }
-}
-
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.size.width, height: 1)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width - 36
-        return CGSize(width: width, height: 80)
-    }
-}
-
-extension HomeViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as? HomeCollectionViewCell
-        cell?.setup()
-        return cell ?? UICollectionViewCell()
+        setupLayout()
     }
 }
 
@@ -94,6 +74,27 @@ extension HomeViewController {
         navigationItem.titleView = logoView
         navigationItem.rightBarButtonItems = [bellBarItem, chatBarItem, addBarItem]
     }
+    
+    private func setupLayout() {
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
+            $0.height.equalTo(scrollView.contentLayoutGuide.snp.height)
+        }
+        contentView.addSubview(homeListStackView)
+        homeListStackView.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16.0)
+            $0.trailing.equalToSuperview().inset(16.0)
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+    }
+    
     @objc func logoButtonPressed() {
         // action
     }
@@ -107,3 +108,15 @@ extension HomeViewController {
         // action
     }
 }
+
+#if DEBUG
+import SwiftUI
+
+struct HomeViewControllerPreview: PreviewProvider {
+    static var previews: some View {
+        HomeViewController()
+            .toPreview()
+//            .ignoresSafeArea()
+    }
+}
+#endif
